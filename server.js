@@ -33,7 +33,8 @@ const server = app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
 
-const FrontEndPort = 'http://127.0.0.1:5173';
+// const FrontEndPort = 'http://127.0.0.1:5173';
+const FrontEndPort = process.env.FRONTEND_PORT;
 const io = socket(server, {
   cors: {
     origin: FrontEndPort,
