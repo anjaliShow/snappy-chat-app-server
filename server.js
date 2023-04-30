@@ -4,7 +4,11 @@ require('dotenv').config({
   path: './config/config.env',
 });
 const cors = require('cors');
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://anjali-snappy-chat-app.vercel.app',
+  })
+);
 const databaseConnect = require('./config/database');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
